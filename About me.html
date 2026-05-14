@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ms"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Website Safirah</title><style>/* 1. ANIMASI BACKGROUND & FIREFLIES */body, html {margin: 0;padding: 0;min-height: 100%;font-family: Arial, sans-serif;}
+    /* Latar belakang bergerak (Soft Sunset) */
+    .bg-animated {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 50%, #fdefe2 100%);
+        background-size: 300% 300%;
+        animation: softFlow 12s ease-in-out infinite;
+        z-index: -2;
+    }
+
+    @keyframes softFlow {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Container untuk lampu kelip-kelip */
+    #firefly-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    .firefly {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: #fffce0;
+        border-radius: 50%;
+        box-shadow: 0 0 15px 3px rgba(255, 253, 150, 0.8);
+        opacity: 0;
+        animation: drift var(--d) linear infinite, flash var(--f) ease-in-out infinite;
+    }
+
+    @keyframes drift {
+        from { transform: translateY(110vh) translateX(0); }
+        to { transform: translateY(-10vh) translateX(var(--x)); }
+    }
+
+    @keyframes flash {
+        0%, 100% { opacity: 0; scale: 0.5; }
+        50% { opacity: 1; scale: 1.2; }
+    }
+
+    /* 2. GAYA WEBSITE SAFIRAH */
+    .page-content {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .main-container {
+        background-color: rgba(255, 255, 255, 0.9); /* Sedikit lutsinar supaya nampak glow belakang */
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        backdrop-filter: blur(5px); /* Efek glassmorphism lembut */
+    }
+
+    h1 {
+        font-family: 'Bookman Old Style', Rockwell;
+        font-size: 32px;
+        font-weight: bold;
+        color: #800080;
+        text-transform: uppercase;
+        margin-top: 0;
+    }
+
+    .nav-links a {
+        display: inline-block;
+        text-decoration: none;
+        color: #800080;
+        font-weight: bold;
+        margin: 10px;
+        padding: 12px 25px;
+        background: white;
+        border-radius: 40px;
+        border: 2px solid #800080;
+        transition: transform 0.3s ease, background 0.3s;
+    }
+
+    .nav-links a:hover {
+        background-color: #800080;
+        color: white;
+        transform: scale(1.1);
+        box-shadow: 0 5px 15px rgba(128,0,128,0.2);
+    }
+
+    .profile-pic {
+        width: 250px;
+        height: auto;
+        border: 10px solid #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        margin: 20px 0;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #eee;
+        margin: 30px 0;
+    }
+
+    .footer {
+        font-size: 0.85em;
+        color: #666;
+        margin-top: 20px;
+        line-height: 1.6;
+    }
+</style>
+</head><body>
+<!-- Layer Background Bergerak -->
+<div class="bg-animated"></div>
+
+<!-- Layer Lampu Kelip-kelip -->
+<div id="firefly-container"></div>
+
+<!-- Kandungan Website -->
+<div class="page-content">
+    <div class="main-container">
+        <h1>WELCOME TO MY PERSONAL WEBSITE!</h1>
+
+
+        <h2 style="color: #555; margin-top: 30px;">Short Bio</h2>
+
+        <img src="img/PinkMe.jpg" alt="Safirah Photo" class="profile-pic">
+
+        <p><strong>Name:</strong> Siti NurSafirah binti Abdul Halid</p>
+        <p><strong>No.Matrix:</strong> 2025418078</p>
+
+        <p>Hello! I am Safirah, a student from class KSI2602B, Faculty of Information Science (hons) in Library Management at University Teknologi Mara (UiTM) Merbok Kedah Branch.</p>
+        <p>Welcome to my personal website where you can explore more about me, my collection, Favourite Song, my education, Family & my Contact.</p>
+
+        <hr>
+            This website is created for IML470 Individual Project<br>
+            Prepare for: Encik Ahmed Noor Kader Mustajir bin MD Eusoff
+        <p> Created by Safirah, 2026
+        </div>
+    </div>
+</div>
+
+<!-- Script untuk gerakkan lampu -->
+<script>
+    const container = document.getElementById('firefly-container');
+    const count = 35; 
+
+    for (let i = 0; i < count; i++) {
+        const firefly = document.createElement('div');
+        firefly.className = 'firefly';
+        firefly.style.left = Math.random() * 100 + 'vw';
+
+        const duration = Math.random() * 10 + 10 + 's';
+        firefly.style.setProperty('--d', duration);
+
+        const flashDuration = Math.random() * 3 + 2 + 's';
+        firefly.style.setProperty('--f', flashDuration);
+
+        const driftX = (Math.random() - 0.5) * 200 + 'px';
+        firefly.style.setProperty('--x', driftX);
+
+        firefly.style.animationDelay = Math.random() * 15 + 's';
+        container.appendChild(firefly);
+    }
+</script>
+</body></html>

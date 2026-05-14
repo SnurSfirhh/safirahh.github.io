@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Collection</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+/* --- CSS asal awak --- */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;min-height:100vh;overflow-x:hidden;background:linear-gradient(135deg,#f8e8ff,#e7dcff,#d8f0ff);position:relative;}
+
+.sky{position:fixed;width:100%;height:100%;overflow:hidden;z-index:-2;}
+.butterfly{position:absolute;font-size:30px;animation:fly 18s linear infinite;opacity:0.8;}
+.b1{top:10%;left:-10%;animation-duration:15s;}
+.b2{top:30%;left:-20%;animation-duration:20s;}
+.b3{top:60%;left:-15%;animation-duration:18s;}
+.b4{top:80%;left:-25%;animation-duration:22s;}
+@keyframes fly{0%{transform:translateX(0) translateY(0);}25%{transform:translateX(30vw) translateY(-20px);}50%{transform:translateX(60vw) translateY(20px);}75%{transform:translateX(85vw) translateY(-10px);}100%{transform:translateX(120vw) translateY(0);}}
+.flower{position:absolute;font-size:28px;opacity:0.5;animation:float 6s ease-in-out infinite;}
+.f1{top:10%;right:8%;}.f2{bottom:12%;left:5%;}.f3{top:65%;right:12%;}.f4{top:35%;left:8%;}
+@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-15px);}}
+.container{width:90%;max-width:1100px;margin:70px auto;background:rgba(255,255,255,0.2);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.3);border-radius:35px;padding:40px;}
+h1{text-align:center;font-size:3rem;color:#7b5ea7;margin-bottom:10px;}
+p{text-align:center;color:#7c6f8d;margin-bottom:40px;}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.image-box{height:250px;border-radius:25px;overflow:hidden;position:relative;transition:0.4s;box-shadow:0 0 15px rgba(0,0,0,0.1);cursor:pointer;}
+.image-box:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 0 25px rgba(255,255,255,0.4);}
+.image-box img{width:100%;height:100%;object-fit:cover;}
+.placeholder{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,0.6);padding:5px 10px;border-radius:10px;font-size:0.8rem;color:#5b4b7a;}
+
+/* --- MODAL CSS --- */
+.modal{display:none;position:fixed;z-index:999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.7);justify-content:center;align-items:center;}
+.modal-content{background:#fff;border-radius:20px;max-width:80%;max-height:80%;overflow:auto;padding:20px;text-align:center;}
+.modal-content img{width:100%;height:auto;border-radius:15px;}
+.modal-description{margin-top:15px;font-size:1rem;color:#444;}
+.close{position:absolute;top:20px;right:30px;font-size:2rem;color:#fff;cursor:pointer;}
+</style>
+</head>
+
+<body>
+
+<div class="sky">
+    <div class="butterfly b1">﹏𓂁﹏⊹ ࣪ ˖𓆝 𓆟 𓆞</div>
+    <div class="butterfly b2">.˚ 𓆉 𓆝 𓆡⋆.˚ 𓇼༄.°𓇼 ⋆</div>
+    <div class="butterfly b3">🦋🐬☂</div>
+    <div class="butterfly b4">☁️⋅♡𓂃 ࣪ ִֶָ☾.✶₊˚ʚ 🌱 ₊˚✧ ﾟ</div>
+    <div class="flower f1">🌸</div><div class="flower f2">🌷</div><div class="flower f3">🌼</div><div class="flower f4">🌹</div>
+</div>
+
+<div class="container">
+<h1>My Collection ☁️⋅♡📸</h1>
+ <p>Beautiful memories, peaceful vibes and favourite moments.</p>
+<p>“Exploring landscapes with my camera is how I collect moments of serenity.”</p>
+
+<div class="gallery">
+    <div class="image-box" data-desc="This picture looks calm and beautiful, that’s why I captured the sunset."><img src="img/Sunset.jpg" alt=""><div class="placeholder">Sunset</div></div>
+    <div class="image-box" data-desc="I put this photo because the beach makes me feel peaceful and free."><img src="img/BeachGirl.jpg" alt=""><div class="placeholder">Peaceful Moment</div></div>
+    <div class="image-box" data-desc=" I took this shot because the cat’s cuteness always makes me smile."><img src="img/Cat.jpg" alt=""><div class="placeholder">Cute Cat</div></div>
+    <div class="image-box" data-desc="This picture is here because it keeps a memory of my own journey."><img src="img/MyJourney.jpg" alt=""><div class="placeholder">My Self</div></div>
+    <div class="image-box" data-desc="I chose this photo because Penang Bridge reminds me of travel and special times."><img src="img/PenangBridge.jpg" alt=""><div class="placeholder">Penang Bridge</div></div>
+    <div class="image-box" data-desc="This picture feels fresh and natural, showing how close I am to nature."><img src="img/WaterFall.jpg" alt=""><div class="placeholder">WaterFall</div></div>
+    <div class="image-box" data-desc="I placed this photo because airplanes represent my dream to explore the world."><img src="img/Aeroplane.jpg" alt=""><div class="placeholder">Aeroplane</div></div>
+    <div class="image-box" data-desc="This picture stands for pride, as the Twin Towers KLCC symbolize Malaysia."><img src="img/Klcc.jpg" alt=""><div class="placeholder">Twin Tower KLCC</div></div>
+    <div class="image-box" data-desc="I added this photo because fireworks at Top Komtar make me feel joyful and excited.
+"><img src="img/TopKomtar.jpg" alt=""><div class="placeholder">Fireworks at Top Komtar Penang</div></div>
+</div>
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="myModal">
+    <span class="close" id="closeBtn">&times;</span>
+    <div class="modal-content">
+        <img id="modalImg" src="" alt="">
+        <div class="modal-description" id="modalDesc"></div>
+    </div>
+</div>
+
+<script>
+const modal = document.getElementById("myModal");
+const modalImg = document.getElementById("modalImg");
+const modalDesc = document.getElementById("modalDesc");
+const closeBtn = document.getElementById("closeBtn");
+
+document.querySelectorAll(".image-box").forEach(box=>{
+    box.addEventListener("click",()=>{
+        const imgSrc = box.querySelector("img").src;
+        const desc = box.getAttribute("data-desc");
+        modal.style.display="flex";
+        modalImg.src=imgSrc;
+        modalDesc.textContent=desc;
+    });
+});
+
+closeBtn.addEventListener("click",()=>{modal.style.display="none";});
+window.addEventListener("click",(e)=>{if(e.target==modal){modal.style.display="none";}});
+</script>
+
+</body>
+</html>
+

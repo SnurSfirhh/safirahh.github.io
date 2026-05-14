@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Symphony</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', Dancing Script;
+      background: linear-gradient(to top, #87ceeb, #ffffff);
+      overflow-x: hidden;   /* block scroll kiri-kanan */
+      overflow-y: auto;     /* benarkan scroll ke bawah */
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2em;
+      color: #2c3e50;
+    }
+
+    /* Awan layer 1 */
+    .cloud1 {
+      position: fixed;
+      top: 50px;
+      width: 200px; height: 100px;
+      background: #fff;
+      border-radius: 100px;
+      opacity: 0.7;
+      animation: moveCloud1 60s linear infinite;
+      z-index: 1;
+    }
+    @keyframes moveCloud1 {
+      from { left: -250px; }
+      to { left: 100%; }
+    }
+
+    /* Awan layer 2 */
+    .cloud2 {
+      position: fixed;
+      top: 120px;
+      width: 250px; height: 120px;
+      background: #f8f8f8;
+      border-radius: 120px;
+      opacity: 0.6;
+      animation: moveCloud2 90s linear infinite;
+      z-index: 1;
+    }
+    @keyframes moveCloud2 {
+      from { left: -300px; }
+      to { left: 100%; }
+    }
+
+    /* Awan layer 3 */
+    .cloud3 {
+      position: fixed;
+      top: 200px;
+      width: 150px; height: 80px;
+      background: #fff;
+      border-radius: 80px;
+      opacity: 0.8;
+      animation: moveCloud3 40s linear infinite;
+      z-index: 1;
+    }
+    @keyframes moveCloud3 {
+      from { left: -200px; }
+      to { left: 100%; }
+    }
+
+    /* Ombak pantai */
+    .wave {
+      position: fixed;
+      bottom: 0;
+      width: 200%;
+      height: 180px;
+      background: url('WaveToEarth.jpg') repeat-x;
+      animation: moveWaves 25s linear infinite;
+      z-index: 1;
+    }
+    @keyframes moveWaves {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* Container content */
+    .container {
+      position: relative;
+      z-index: 2;
+      margin-top: 100px;
+      padding-bottom: 400px; /* bagi ruang scroll lebih panjang */
+    }
+
+    .song-image {
+      width: 300px;
+      height:300px;
+      margin: 20px auto;
+      background: #eee;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      background-size: cover;
+      background-position: center;
+    }
+
+    .reason {
+      max-width: 600px;
+      margin: 30px auto;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center; /* center tajuk dan isi */
+    }
+    .reason p {
+      text-align: justify; /* justify perenggan supaya rata kiri-kanan */
+    }
+
+    .lyrics {
+      max-width: 600px;
+      margin: 30px auto;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+    }
+
+    /* Tambahan untuk image-box */
+    .image-box {
+      width: 320px;          /* kecilkan kotak */
+      margin: 20px auto;
+      text-align: center;
+    }
+    .image-box img {
+      width: 100%;           /* fit ikut kotak */
+      height: auto;          /* maintain ratio */
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .image-box .placeholder {
+      margin-top: 8px;
+      font-size: 1em;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <!-- Banyak awan -->
+  <div class="cloud1"></div>
+  <div class="cloud2"></div>
+  <div class="cloud3"></div>
+
+  <!-- Ombak pantai -->
+  <div class="wave"></div>
+
+  <!-- Content utama -->
+  <div class="container">
+    <h1>My Symphony｡⋆♬⋆🎧𝄞⋆</h1>
+
+    <!-- Ruang gambar lagu -->
+    <div class="image-box">
+        <img src="img/WaveToEarth.jpg" alt="">
+        <div class="placeholder">Seasons</div>
+    </div>
+
+    <!-- Ruang sebab suka -->
+    <div class="reason">
+      <h2>“Why Seasons by Wave to Earth Stays in My Playlist”</h2>
+      <p> ☆ My favourite song is Seasons by Wave to Earth, a South Korean indie band known for their lo-fi, jazz-inspired sound. This song is part of their playlist that I enjoy the most because of its calming melody and emotional depth. Listening to it always brings me comfort and peace.</p>
+      <p> ☆ The song Seasons tells a story about love, sacrifice, and insecurity. The lyrics describe someone who feels unworthy of the person they love, so they choose to step away to avoid causing pain. Despite this, they continue to pray and hope, promising to give their whole life symbolized as “my seasons” to the one they care about.</p>
+      <p> ☆ I like this song because of its soothing melody and heartfelt lyrics. It is perfect to listen to at night or when I want to relax. The honesty in the words makes me reflect on my own feelings, especially the moments when I feel insecure but still want to give my best to the people I love. This makes the song very relatable and meaningful to me.</p>
+    </div>
+
+    <!-- Ruang lirik -->
+    <div class="lyrics">
+      <h2>Lyrics 𓆝 ˖°🌊⋆.˚ 𓇼༄.</h2>
+      <p> One of the lines that touches me the most is:</p>
+      <center>
+        <p>“But I'll pray for you all the time</p>
+        <p>   If I could be by your side </p>
+        <p>   I'll give you all my life,</p>
+        <p>           my seasons.”</p>
+      </center>
+      <p>This part shows the sincerity and sacrifice in love, which is the main reason why the song feels so powerful.</p>
+    </div>
+    <p> Play the audio below: </p>
+    <div class="music-center">
+      <audio controls class="audio-player">
+        <source src="audio/SeasonMp3.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+ </body>
+</html>
